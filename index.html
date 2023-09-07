@@ -37,42 +37,104 @@
 						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
 							<ul class="list-unstyled mb-0">
 								
-<!--								实现点击复制手机号-->
-								<li class="mb-2" onmouseover="displayText(event)" onmouseout="hideText()" style="position:relative;">
-								 <i class="fas fa-phone-square fa-fw fa-lg me-2"></i>
-								 <a class="resume-link" href="tel:#">13978822979</a>
-								 </li>
 
+								<li class="mb-2" style="position:relative;" onmouseover="displayText(event)" onmouseout="hideText()">
+									<i class="fas fa-phone-square fa-fw fa-lg me-2"></i>
+									<a class="resume-link" href="javascript:;" onclick="copyToClipboard('13978822979')">13978822979</a>
+								</li>
+								
 								<span id="hoverText" style="display:none; position:absolute; left:0; top:100%; white-space: nowrap; background-color: #f9f9f9; padding: 5px; border-radius: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);">
-								  微信和手机同号，您可以通过手机号搜索到我的微信号
+									微信和手机同号，可以通过手机号搜索到我的微信号
 								</span>
-
+								
 								<script>
-								  function displayText(event) {
-									const hoverText = document.getElementById("hoverText");
-									hoverText.style.display = "inline";
-									hoverText.style.top = event.clientY + 10 + "px";
-									hoverText.style.left = event.clientX - hoverText.offsetWidth / 2 + "px";
-								  }
-
-								  function hideText() {
-									document.getElementById("hoverText").style.display = "none";
-								  }
+									function displayText(event) {
+										const hoverText = document.getElementById("hoverText");
+										hoverText.style.display = "inline";
+										hoverText.style.top = event.currentTarget.getBoundingClientRect().bottom + 10 + "px";
+										hoverText.style.left = event.clientX - hoverText.offsetWidth / 2 + "px";
+									}
+								
+									function hideText() {
+										document.getElementById("hoverText").style.display = "none";
+									}
 								</script>
 								
 								
-								<li class="mb-2">
-								<i class="fas fa-envelope-square fa-fw fa-lg me-2"></i>
-								<a class="resume-link" href="mailto:imawuya@outlook.com">imawuya@outlook.com</a>
-							</li>
+								<!-- 邮箱 -->
+								<li class="mb-2" onmouseover="displayEmailText(event)" onmouseout="hideEmailText()">
+									<i class="fas fa-envelope-square fa-fw fa-lg me-2"></i>
+									<a class="resume-link" href="mailto:imawuya@outlook.com">imawuya@outlook.com</a>
+								</li>
+								
+								<!-- 鼠标悬停 -->
+								<span id="emailText" style="display:none; position:absolute; left:0; top:100%; white-space: nowrap; background-color: #f9f9f9; padding: 5px; border-radius: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);">
+									私人邮箱
+								</span>
+								
+								<script>
+									function displayEmailText(event) {
+										var emailText = document.getElementById("emailText");
+										emailText.style.display = "inline";
+										emailText.style.top = event.clientY + 10 + "px";
+										emailText.style.left = event.clientX - emailText.offsetWidth / 2 + "px";
+									}
+								
+									function hideEmailText() {
+										document.getElementById("emailText").style.display = "none";
+									}
+								</script>
+								
+
+								<!-- bolg -->
+								<li class="mb-2" onmouseover="displayBlogText(event)" onmouseout="hideBlogText()">
+									<i class="fas fa-globe fa-fw fa-lg me-2"></i>
+									<a class="resume-link" href="https://www.cnblogs.com/imawuya/">myblog</a>
+								</li>
+								
+								<span id="blogText" style="display:none; position:absolute; left:0; top:100%; white-space: nowrap; background-color: #f9f9f9; padding: 5px; border-radius: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);">
+									我的Blog
+								</span>
+								<!-- 鼠标悬停 -->
+
+								<script>
+									function displayBlogText(event) {
+										var blogText = document.getElementById("blogText");
+										blogText.style.display = "inline";
+										blogText.style.top = event.clientY + 10 + "px";
+										blogText.style.left = event.clientX - blogText.offsetWidth / 2 + "px";
+									}
+								
+									function hideBlogText() {
+										document.getElementById("blogText").style.display = "none";
+									}
+								</script>
 								
 								
-								<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg me-2"></i><a class="resume-link" href="https://www.cnblogs.com/imawuya/">myblog</a></li>
+								<!-- 地址 -->
+								<li class="mb-0" onmouseover="displayLocationText(event)" onmouseout="hideLocationText()">
+									<i class="fas fa-map-marker-alt fa-fw fa-lg me-2"></i>广西 南宁
+								</li>
 								
-								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg me-2"></i>广西 南宁</li>
-							</ul>
-						</div><!--//resume-contact-->
-					</div><!--//row-->
+								<span id="locationText" style="display:none; position:absolute; left:0; top:100%; white-space: nowrap; background-color: #f9f9f9; padding: 5px; border-radius: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);">
+									现居广西南宁，可以移居其他城市
+								</span>
+
+								<!-- 鼠标悬停 -->
+								<script>
+									function displayLocationText(event) {
+										var locationText = document.getElementById("locationText");
+										locationText.style.display = "inline";
+										locationText.style.top = event.clientY + 10 + "px";
+										locationText.style.left = event.clientX - locationText.offsetWidth / 2 + "px";
+									}
+								
+									function hideLocationText() {
+										document.getElementById("locationText").style.display = "none";
+									}
+								</script>
+								
+
 					
 				</div><!--//resume-header-->
 				<hr>
@@ -83,14 +145,15 @@
 						</div>
 						
 						<div class="col text-start">
+
 							<ul>
 								  <li>年龄：20</li> 
 								  <li>性别：女</li>
-								  <li>学历：专科</li>
 								  <li>专业：信息安全</li>
+								  <li>学历：专科</li>
 								   
 								</ul>
-							<p class="mb-0">本人对网络信息安全行业有浓厚兴趣，有意向朝渗透测试与网络信息安全方向发展，曾多次参加学校和网上举办的CTF比赛，如安恒、i春秋、看雪等平台，擅长web模块，熟悉文件上传、SQL注入、XSS攻击等。能够为渗透测试总结出完整的报告和ppt。本人学习能力强，拥有良好的自学能力，擅长沟通，执行力强，能够快速融入团队，接收并完成上级布置的任务。</p>
+							<p class="mb-0">本人对网络信息安全行业有浓厚兴趣，有意向朝渗透测试与网络信息安全方向发展，多次参加学校和网上举办的CTF比赛，如安恒、i春秋、看雪等平台。擅长web模块，熟悉文件上传、SQL注入、XSS攻击等。能够为渗透测试总结出完整的报告和ppt。本人学习能力强，拥有良好的自学能力，擅长沟通，执行力强，能够快速融入团队，接收并完成上级布置的任务。</p>
 						</div><!--//col-->
 					</div>
 				</div><!--//resume-intro-->
@@ -119,44 +182,62 @@
 										</ul>
 								  </div>
 								</div><!--//item-->
+
+
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										
 										<h3 class="text-uppercase resume-section-heading mb-4">实习经历</h3>
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">售后实习生</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Teleperformance<br>2023.9 - 2023.12</div>
+									</div>
+									<div class="item-content">
+										<p>关键词：售后服务、客户支持</p>
+										<ul class="resume-list">
+											<li>负责公司产品的售前和售后技术支持；</li>
+											<li>掌握厂商设备技术，设备安装与运用，排除解决常见的设备软硬件故障；</li>
+											<li>相关产品技术讲解和方案编写；</li>
+											<li>协助团队解决售前售后问题，保持良好的团队合作和协调能力。</li>
+											<li>建立良好的客户关系，负责解答用户的技术咨询，解决常见问题；</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+
+
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">前端实习生</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">解忧工作室<br>2022.6 - 2022.9</div>
+									</div>
+									<div class="item-content">
+										<p>关键词：前端、JS、CSS</p>
+										<ul class="resume-list">
+											<li>参与团队WEB产品前端开发；</li>
+											<li>配合项目负责人制定前端页面规范，优化页面体验和浏览器兼容性；</li>
+											<li>解决终端浏览器及终端系统之间的兼容性问题，保证页面的高质量显示；</li>
+											<li>设计不同种类的线上产品或元素，如门户网站，移动门户，UI设计等；</li>
+											<li>使用Photoshop、Dreamweaver、Illustrator等软件进行设计。</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
 										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">安全运维实习生</h4>
 										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">南宁寻梦天下科技有限公司<br>2021.6 - 2021.9</div>
-										
 									</div>
 									<div class="item-content">
 										<p>关键词：Linux维护、安全、应急响应</p>
 										<ul class="resume-list">
-											
-										  <li>负责现场设备巡查和应急反应，以确保现场设备有7*24小时的持续运作能力；</li>
+											<li>负责现场设备巡查和应急反应，以确保现场设备有7*24小时的持续运作能力；</li>
 											<li>负责网络、防火墙、系统安全、病毒防护方案的部署与管理；</li>
 											<li>参与公司设备Linux的安装、维护、调试工作；</li>
 											<li>安全设备的日常监控与维护，及时进行安全设备策略的变更与调整；</li>
 											<li>定期关注安全设备系统的升级补丁，核实准确性后及时更新补丁，完成安全设备系统升级。</li>
-											
-											
 										</ul>
 									</div>
 								</div><!--//item-->
-							  <div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">前端实习生</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">解忧工作室<br>2022.6 -2022.9</div>
-										
-									</div>
-									<div class="item-content">
-										<p>关键词：前端、JS、CSS</p>
-									</div>
-									<li>参与团队WEB产品前端开发；</li>
-								    <li> 配合项目负责人制定前端页面规范，优化页面体验和浏览器兼容性</li>
-									<li>解决终端浏览器及终端系统之间的兼容性问题，保证页面的高质量显示；</li>
-								    <li>设计不同种类的线上产品或元素，如门户网站，移动门户，UI设计等；</li>
-								    <li>使用Photoshop、Dreamweaver、Illustrator等软件进行设计。</li>
-									
-								</div><!--//item-->
+								
+
+
 								<div class="item">
 									<div class="item-heading row align-items-center mb-2">
 										
@@ -178,13 +259,13 @@
 									
 								</div><!--//item-->
 								
-							</section><!--//work-section-->
+							</section><!--/vocational skills-->
 
 							
 							<section class="project-section py-3">
 								<h3 class="text-uppercase resume-section-heading mb-4">职业技能</h3>
 								<div class="item mb-3">
-									<li>具备基础渗透测试能力，熟练使用渗透测试工具，如burp、sqlmap、nessus等工具；</li>
+									<li>具备基础渗透测试能力，熟练使用渗透测试工具，如burp、sqlmap、nessus、CS等工具；</li>
 									<li>熟悉等级测评保护流程，熟练使用常规软件，如：Xshell、Putty、Word、Excel、PDF等；</li>
 									<li>掌握常见安全设备（如防火墙、IDS/IPS、WAF、漏扫、审计等）的配置、策略优化；</li>
 									<li>熟练掌握 linux 基本命令，熟悉TCP/IP协议、HTTP协议，了解主流的网络安全设备；</li>
@@ -240,11 +321,17 @@
 									
 									<section class="skills-section py-3">
 										<h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
+
 										<ul class="list-unstyled resume-lang-list">
 											<li class="mb-2">中文 <span class="text-muted">(母语)</span></li>
-											<li>英语 <span class="text-muted">(流利)</span></li>
+											<li class="mb-2">英语 <span class="text-muted">(流利)</span></li>
+											<li class="mb-2">广西少数民族语言 <span class="text-muted">(流利)</span></li>
+
 										</ul>
+										
 									</section><!--//certificates-section-->
+
+
 									<section class="skills-section py-3">
 						
 									</section><!--//certificates-section-->
